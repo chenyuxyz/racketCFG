@@ -2,12 +2,12 @@
 
 (require "grammar.rkt")
 
-(define p1 (pair (term "01") (end)))
-(define p2 (pair (term "0") (pair (var "S") (pair (term "1") (end)))))
-(define p3 (pair (term "0") (pair (var "R") (pair (term "1") (end)))))
+(define p1 (list (term "01")))
+(define p2 (list (term "0") (var "S") (term "1")))
+(define p3 (list (term "0") (var "R") (term "1")))
 (define r1 (rule (var "S") p1))
 (define r2 (rule (var "S") p2))
-(define ra1 (rule (var "S") (pair (eps) (end))))
+(define ra1 (rule (var "S") (list (eps))))
 
 (display "show pairs: ")
 (show p2)
